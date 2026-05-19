@@ -102,10 +102,10 @@ public class VikingServiceAnalyzer {
                 .max(Integer::compareTo);
     }
 
-    public List<Integer> getEvenIds() {
+    public Integer[] getEvenIds() {
         return vikingStorage.findAll().stream()
                 .map(Viking::id)
                 .filter(id -> id != null && id % 2 == 0)
-                .collect(Collectors.toList());
+                .toArray(Integer[]::new);
     }
 }
