@@ -55,13 +55,13 @@ public class VikingServiceAnalyzer {
      * Подсчёт викингов с определённым количеством топоров в снаряжении.
      * Топор определяется по названию, содержащему "axe" (без учёта регистра).
      */
-    public long countByAxeQuantity(int expectedAxesCount) {
+    public long countWithOneOrTwoAxes(int countAxe) {
         return vikingStorage.findAll().stream()
                 .filter(v -> {
                     long axes = v.equipment().stream()
-                            .filter(e -> e.name().toLowerCase().contains("axe"))
+                            .filter(e -> e.name().equalsIgnoreCase("axe"))
                             .count();
-                    return axes == expectedAxesCount;
+                    return axes == countAxe;
                 })
                 .count();
     }

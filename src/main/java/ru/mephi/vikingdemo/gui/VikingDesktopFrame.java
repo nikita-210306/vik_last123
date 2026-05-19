@@ -140,9 +140,9 @@ public class VikingDesktopFrame extends JFrame {
                 long count = analyzer.countByBeardAndHair(BeardStyle.SHORT, HairColor.Blond);
                 output = "Светлых с короткой бородой: " + count;
             } else if (opt6.isSelected()) {
-                output = "Викингов с 1 топором: " + analyzer.countByAxeQuantity(1);
+                output = "Викингов с 1 топором: " + analyzer.countWithOneOrTwoAxes(1);
             } else if (opt7.isSelected()) {
-                output = "Викингов с 2 топорами: " + analyzer.countByAxeQuantity(2);
+                output = "Викингов с 2 топорами: " + analyzer.countWithOneOrTwoAxes(2);
             } else if (opt8.isSelected()) {
                 output = analyzer.getRandomVikingTallerThan(180)
                         .map(v -> "Случайный великан: " + v.name() + " (рост " + v.heightCm() + " см)")
