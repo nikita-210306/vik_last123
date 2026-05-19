@@ -125,10 +125,10 @@ public class VikingDesktopFrame extends JFrame {
             String output = "";
 
             if (opt1.isSelected()) {
-                long count = analyzer.countByAgeGreaterThan(20);
+                long count = analyzer.countByAgeGreaterThan(31);
                 output = "Викингов старше 20 лет: " + count;
             } else if (opt2.isSelected()) {
-                long count = analyzer.countByAgeLessThan(20);
+                long count = analyzer.countByAgeLessThan(31);
                 output = "Викингов младше 20 лет: " + count;
             } else if (opt3.isSelected()) {
                 long count = analyzer.countByAgeBetween(20, 40);
@@ -137,8 +137,8 @@ public class VikingDesktopFrame extends JFrame {
                 long count = analyzer.countByAgeOutside(20, 40);
                 output = "Викингов вне возраста 20-40 лет: " + count;
             } else if (opt5.isSelected()) {
-                long count = analyzer.countByBeardAndHair(BeardStyle.LONG, HairColor.Red);
-                output = "Рыжих с длинной бородой: " + count;
+                long count = analyzer.countByBeardAndHair(BeardStyle.SHORT, HairColor.Blond);
+                output = "Светлых с короткой бородой: " + count;
             } else if (opt6.isSelected()) {
                 output = "Викингов с 1 топором: " + analyzer.countByAxeQuantity(1);
             } else if (opt7.isSelected()) {
