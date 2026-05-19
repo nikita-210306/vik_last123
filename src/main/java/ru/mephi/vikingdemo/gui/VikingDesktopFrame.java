@@ -84,12 +84,12 @@ public class VikingDesktopFrame extends JFrame {
         JRadioButton opt2 = new JRadioButton("2) Викинги младше 20 лет");
         JRadioButton opt3 = new JRadioButton("3) Викинги в возрасте от 20 до 40 лет");
         JRadioButton opt4 = new JRadioButton("4) Викинги вне возраста 20-40 лет");
-        JRadioButton opt5 = new JRadioButton("5) Рыжие с длинной бородой");
+        JRadioButton opt5 = new JRadioButton("5) Светлые с длинной бородой");
         JRadioButton opt6 = new JRadioButton("6) Имеют 1 топор");
         JRadioButton opt7 = new JRadioButton("7) Имеют 2 топора");
         JRadioButton opt8 = new JRadioButton("8) Случайный великан (рост > 180 см)");
         JRadioButton opt9 = new JRadioButton("9) Викинги с легендарным снаряжением");
-        JRadioButton opt10 = new JRadioButton("10) Рыжие, сортировка по возрасту");
+        JRadioButton opt10 = new JRadioButton("10) Рыжая борода, сортировка по возрасту");
         JRadioButton opt11 = new JRadioButton("11) Максимальный ID");
         JRadioButton opt12 = new JRadioButton("12) Все чётные ID");
 
