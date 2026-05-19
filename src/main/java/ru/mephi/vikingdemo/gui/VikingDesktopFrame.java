@@ -85,8 +85,7 @@ public class VikingDesktopFrame extends JFrame {
         JRadioButton opt3 = new JRadioButton("3) Викинги в возрасте от 20 до 40 лет");
         JRadioButton opt4 = new JRadioButton("4) Викинги вне возраста 20-40 лет");
         JRadioButton opt5 = new JRadioButton("5) Светлые с длинной бородой");
-        JRadioButton opt6 = new JRadioButton("6) Имеют 1 топор");
-        JRadioButton opt7 = new JRadioButton("7) Имеют 2 топора");
+        JRadioButton opt6 = new JRadioButton("6) Имеют 1 или 2 топора");
         JRadioButton opt8 = new JRadioButton("8) Случайный великан (рост > 180 см)");
         JRadioButton opt9 = new JRadioButton("9) Викинги с легендарным снаряжением");
         JRadioButton opt10 = new JRadioButton("10) Рыжая борода, сортировка по возрасту");
@@ -99,7 +98,6 @@ public class VikingDesktopFrame extends JFrame {
         group.add(opt4);
         group.add(opt5);
         group.add(opt6);
-        group.add(opt7);
         group.add(opt8);
         group.add(opt9);
         group.add(opt10);
@@ -113,7 +111,6 @@ public class VikingDesktopFrame extends JFrame {
         panel.add(opt4);
         panel.add(opt5);
         panel.add(opt6);
-        panel.add(opt7);
         panel.add(opt8);
         panel.add(opt9);
         panel.add(opt10);
@@ -140,9 +137,8 @@ public class VikingDesktopFrame extends JFrame {
                 long count = analyzer.countByBeardAndHair(BeardStyle.SHORT, HairColor.Blond);
                 output = "Светлых с короткой бородой: " + count;
             } else if (opt6.isSelected()) {
-                output = "Викингов с 1 топором: " + analyzer.countWithOneOrTwoAxes(1);
-            } else if (opt7.isSelected()) {
-                output = "Викингов с 2 топорами: " + analyzer.countWithOneOrTwoAxes(2);
+                output = "Викингов с 1 л 2 топорами: " + analyzer.countWithOneOrTwoAxes();
+
             } else if (opt8.isSelected()) {
                 output = analyzer.getRandomVikingTallerThan(180)
                         .map(v -> "Случайный великан: " + v.name() + " (рост " + v.heightCm() + " см)")
