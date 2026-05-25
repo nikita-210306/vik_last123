@@ -96,16 +96,23 @@ public class VikingServiceAnalyzer {
 
 
     public Optional<Integer> getMaxId() {
-        return vikingStorage.findAll().stream()
+        Integer[] ids = vikingStorage.findAll().stream()
                 .map(Viking::id)
                 .filter(Objects::nonNull)
-                .max(Integer::compareTo);
+                .toArray(Integer[]::new);
+        if (ids.length == 0) {
+            return Optional.empty();
+        }
+        return Optional.of(Arrays.stream(ids).max(Integer::compareTo).get());
     }
 
     public Integer[] getEvenIds() {
-        return vikingStorage.findAll().stream()
+        Integer[] ids = vikingStorage.findAll().stream()
                 .map(Viking::id)
-                .filter(id -> id != null && id % 2 == 0)
+                .filter(Objects::nonNull)
+                .toArray(Integer[]::new);
+        return Arrays.stream(ids)
+                .filter(id -> id % 2 == 0)
                 .toArray(Integer[]::new);
     }
 }
