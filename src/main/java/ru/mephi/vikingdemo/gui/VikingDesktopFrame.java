@@ -154,7 +154,7 @@ public class VikingDesktopFrame extends JFrame {
                         .map(v -> v.name() + " (" + v.age() + " лет)")
                         .collect(Collectors.joining("\n"));
             } else if (opt11.isSelected()) {
-                output = "Максимальный ID: " + analyzer.getMaxId().orElse(0);
+                output = "Максимальный ID: " + analyzer.getMaxId();
             } else if (opt12.isSelected()) {
                 output = "Чётные ID: " + analyzer.getEvenIds();
             }
