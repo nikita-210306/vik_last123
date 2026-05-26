@@ -51,10 +51,7 @@ public class VikingServiceAnalyzer {
                 .count();
     }
 
-    /**
-     * Подсчёт викингов с определённым количеством топоров в снаряжении.
-     * Топор определяется по названию, содержащему "axe" (без учёта регистра).
-     */
+    
     public long countWithOneOrTwoAxes() {
         return vikingStorage.findAll().stream()
                 .filter(v -> {
@@ -95,24 +92,21 @@ public class VikingServiceAnalyzer {
 
 
 
-    public Optional<Integer> getMaxId() {
-        Integer[] ids = vikingStorage.findAll().stream()
-                .map(Viking::id)
-                .filter(Objects::nonNull)
-                .toArray(Integer[]::new);
-        if (ids.length == 0) {
-            return Optional.empty();
-        }
-        return Optional.of(Arrays.stream(ids).max(Integer::compareTo).get());
+    public int findMaxId() {
+        int[] ids = vikingStorage.findAll().stream()
+                .mapToInt(Viking::id)
+                .toArray();
+        return Arrays.stream(ids).max().orElse(-1);
     }
 
-    public Integer[] getEvenIds() {
-        Integer[] ids = vikingStorage.findAll().stream()
-                .map(Viking::id)
-                .filter(Objects::nonNull)
-                .toArray(Integer[]::new);
+
+
+    public int[] findEvenIds() {
+        int[] ids = vikingStorage.findAll().stream()
+                .mapToInt(Viking::id)
+                .toArray();
         return Arrays.stream(ids)
                 .filter(id -> id % 2 == 0)
-                .toArray(Integer[]::new);
+                .toArray();
     }
 }
