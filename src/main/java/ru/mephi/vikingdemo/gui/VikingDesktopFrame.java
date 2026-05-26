@@ -156,7 +156,7 @@ public class VikingDesktopFrame extends JFrame {
             } else if (opt11.isSelected()) {
                 output = "Максимальный ID: " + analyzer.getMaxId();
             } else if (opt12.isSelected()) {
-                output = "Чётные ID: " + analyzer.getEvenIds();
+                output = "Чётные ID: " + Arrays.toString(analyzer.findEvenIds());
             }
 
             JOptionPane.showMessageDialog(this, output, "Результат анализа", JOptionPane.INFORMATION_MESSAGE);
